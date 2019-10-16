@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+div.navbar {
+  background-color: #f3ecc5;
+  text-decoration-color: #3a71e7;
+  margin: 10px;
+  display: flex;
+  text-align: center;
+  height: 15;
+}
+
+div.comment_form {
+  background-color: rgb(33, 223, 223);
+  text-align: center;
+  float: right;
+  margin: 10px;
+  width: 65vw;
+}
+
+div.songs_Container {
+  background-color: #ffebd2;
+  text-align: center;
+  margin: 10px;
+  float: left; 
+  width: 30vw;
+}
+
+div.todays_topic {
+  text-align: center;
+  text-decoration-color: coral;
+  -webkit-text-fill-color: teal;
+}

@@ -1,0 +1,19 @@
+  render() {
+  const dreams = this.props.dreams.map((dreams, i) => <li key={i}>{dreams.title} - {dreams.description}</li>)
+  // function on the prototype
+    return (
+      <div className="app">
+        <h1>My Dream Diary</h1>
+        <DreamForm />
+        <CommentForm />
+        
+        <h2>Dream List</h2>
+       
+        <ul>
+        {this.props.loading ? <h3>Loading...</h3> :  dreams }
+        </ul>
+
+      </div>
+    );
+  }
+}
