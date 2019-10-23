@@ -7,9 +7,9 @@ import { connect } from 'react-redux';
 
 class DreamContainer extends Component {
 
+
     componentDidMount() {
         console.log("a")
-        
         this.props.getDreams()
         console.log("b")
     }
@@ -20,6 +20,7 @@ class DreamContainer extends Component {
         <div className ="dreams_Container">
                 <div className="Dreams">
                     <Dreams dreams={this.props.dreams} />
+                    
                 </div>
         </div>
         )

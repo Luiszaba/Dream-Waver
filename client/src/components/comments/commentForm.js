@@ -18,8 +18,10 @@ class CommentForm extends Component {
     }
 
     handleOnSubmit = e => {
+        console.log(2)
         e.preventDefault()
         this.props.addComment(this.state)
+        console.log(3)
         this.setState({
             comment: "",
             loading: false
@@ -28,6 +30,7 @@ class CommentForm extends Component {
     }
 
     render() {
+        console.log(4)
         return (
             <div className="commentForm">
                 <form onSubmit = {this.handleOnSubmit}>

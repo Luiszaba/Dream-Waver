@@ -28,12 +28,14 @@ class App extends Component {
 
 
   render() {
+    console.log(1)
     return (
       <div className="app">
         <h1>Dreamy Time</h1>
         <div className="AppPage">
           <div className="navbar"><Nav /></div>
           <div className="dream_form"><DreamForm /></div>
+          
           <div className="comment_form"><CommentForm /></div>
           <div className="dream_container"><DreamList /></div>
           <div className="comment_container"><CommentList /></div>

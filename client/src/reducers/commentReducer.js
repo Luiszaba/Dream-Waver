@@ -1,4 +1,5 @@
 export default (state = {comments: [], loading: false } , action) => {
+    console.log(9)
     switch(action.type) {
         case 'LOADING_COMMENT':
             return {

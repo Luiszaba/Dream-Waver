@@ -10,6 +10,7 @@ class Dreams extends Component {
             dream={dream}
             />
             </ul>
+            
         )
     return(
         <div className="DreamList"> {dreamList} </div>

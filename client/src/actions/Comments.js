@@ -12,8 +12,10 @@ export const getComments = () => {
 };
 
 export const addComment = (comments) => {
+    console.log(5)
     return (dispatch) => {
         dispatch({type: "ADD_COMMENTS"}, comments)
+        console.log(6)
         return fetch('http://localhost:3000/api/v1/comments', {
             method: 'POST',
             body: JSON.stringify({
@@ -24,9 +26,11 @@ export const addComment = (comments) => {
             }
         })
         .then(res => res.json())
-        .then(comment => dispatch({ 
+        .then(comment => {
+            console.log(7)
+            dispatch({ 
             type: "ADD_COMMENT", 
-            payload: comment}))
+            payload: comment})})
         // create route
     }
 };

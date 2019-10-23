@@ -7,7 +7,7 @@ class DreamForm extends Component {
         super(props)
         this.state = {
             title: '',
-            description: '',
+            description: ''
         //loading: false
         }
     }
@@ -51,8 +51,6 @@ class DreamForm extends Component {
                     />
                     <button type="submit">Add Dream</button>
                 </form>
-                
-
             </div>
         )
     }
