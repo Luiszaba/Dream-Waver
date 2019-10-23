@@ -1,4 +1,4 @@
-export default (state = {dreams: [], loading:false} , action) => {
+export default (state = {dreams: [], loading: false } , action) => {
     switch(action.type) {
         case 'LOADING_DREAMS':
             return {

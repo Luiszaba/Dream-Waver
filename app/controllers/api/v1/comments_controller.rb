@@ -1,6 +1,5 @@
 module Api::V1
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
 
   # GET /comments
   def index
@@ -19,9 +18,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
-    else
-      render json: {errors: { message: "Please try again.  Either the developer messed up, or you did something wrong"}}
+      render json: @comment
     end
   end
 
@@ -42,7 +39,7 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      @comment = Comment.find_by_id(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

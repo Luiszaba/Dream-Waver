@@ -3,26 +3,29 @@ import { connect } from 'react-redux';
 import { addDreams } from '../../actions/Dreams'
 
 class DreamForm extends Component {
-    state = {
-        description: '',
-        loading: false
+    constructor(props){
+        super(props)
+        this.state = {
+            title: '',
+            description: '',
+        //loading: false
+        }
     }
 
-    handleOnChange = e => {
-        const {name, value} = e.target
+    handleOnChange = event => {
+        const {name, value} = event.target
         this.setState({
             [name]: value
         })
     }
 
-    handleOnSubmit = e => {
-        e.preventDefault()
-        const dream = {...this.state}
-        this.props.addDream(dream)
+    handleOnSubmit = event => {
+        event.preventDefault()
+        this.props.addDreams(this.state)
         this.setState({
             title: '',
             description: '',
-            loading: false
+            //loading: false
             // available in the store because I connected dispatch to props
         })
     }
@@ -34,19 +37,19 @@ class DreamForm extends Component {
                     <label htmlFor="dreamtitle">Dream Title: </label>
                     <input 
                     type = "text"
-                    name = "desciption"
-                    value = {this.state.description}
+                    name = "title"
+                    value = {this.state.title}
                     onChange = {this.handleOnChange}
                     />
-                    <label htmlFor="dreams"> Add Dream: </label>
+                    <label htmlFor="dreamsDescription">Dream: </label>
                     
                     <input 
                     type = "text"
-                    name = "desciption"
+                    name = "description"
                     value = {this.state.description}
                     onChange = {this.handleOnChange}
                     />
-                    <button type="submit">Add dream</button>
+                    <button type="submit">Add Dream</button>
                 </form>
                 
 

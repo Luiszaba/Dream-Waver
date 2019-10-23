@@ -10,8 +10,8 @@ class CommentForm extends Component {
         }
     }
 
-    handleOnChange = e => {
-        const {name, value} = e.target
+    handleOnChange = event => {
+        const {name, value} = event.target
         this.setState({
             [name]: value
         })
@@ -19,8 +19,7 @@ class CommentForm extends Component {
 
     handleOnSubmit = e => {
         e.preventDefault()
-        const comment = {...this.state}
-        this.props.addComment(comment)
+        this.props.addComment(this.state)
         this.setState({
             comment: "",
             loading: false
@@ -35,7 +34,7 @@ class CommentForm extends Component {
                     <label htmlFor="userComment"> Comment: </label>
                     <input 
                     type = "text"
-                    name = "user_comment"
+                    name = "comment"
                     value = {this.state.comment}
                     onChange = {this.handleOnChange}
                     />

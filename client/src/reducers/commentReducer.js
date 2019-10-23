@@ -1,4 +1,4 @@
-export default (state = {comments: [], loading:false} , action) => {
+export default (state = {comments: [], loading: false } , action) => {
     switch(action.type) {
         case 'LOADING_COMMENT':
             return {

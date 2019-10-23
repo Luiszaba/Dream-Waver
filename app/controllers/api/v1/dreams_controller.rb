@@ -1,11 +1,10 @@
 module Api::V1
 class DreamsController < ApplicationController
-  before_action :set_dream, only: [:show, :update, :destroy]
+  
 
   # GET /dreams
   def index
     @dreams = Dream.all.order('created_at DESC')
-
     render json: @dreams
   end
 
@@ -19,9 +18,6 @@ class DreamsController < ApplicationController
     @dream = Dream.new(dream_params)
     if @dream.save
       render json: @dream
-    else 
-      render json: {errors: { message: "Please try again.  Either the developer messed up, or you did something wrong"}}
-      end
     end
   end
 
@@ -42,11 +38,12 @@ class DreamsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dream
-      @dream = Dream.find_buy_id(params[:id])
+      @dream = Dream.find_by_id(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def dream_params
-      params.require(:dream).permit(:title, :description)
+      params.require(:dream).permit(:id, :title, :description)
     end
+end
 end
