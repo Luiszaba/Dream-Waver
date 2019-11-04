@@ -24,10 +24,9 @@ class DreamList extends Component {
                 <ul>
                 <li>Title:"{this.props.dream.title}"</li>
                 <li>Description:{this.props.dream.description}"</li>
+                
                 <button onClick = {this.decrementVote}>Down Vote</button>{this.state.DownVote}
                 <button onClick = {this.incrementVote}>Up Vote</button>{this.state.UpVote}
-                
-                
                 </ul>
             </div>
         )

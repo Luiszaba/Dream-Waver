@@ -1,14 +1,18 @@
 export const getComments = () => {
+    console.log("fetching comments")
     return(dispatch) => {
         //must be done in two steps because these are async actions - thunk
         dispatch({type: 'LOADING_COMMENTS'})
         return fetch('http://localhost:3000/api/v1/comments')
-        // promise
+        //promise
         .then(resp => resp.json())
         .then(comments => dispatch({ 
-            type: "FETCH_COMMENTS", payload: comments}))
+            type: "FETCH_COMMENTS", 
+            payload: comments
+        }))
     }
-    // creating the objects to be sent
+
+    //creating the objects to be sent
 };
 
 export const addComment = (comments) => {
@@ -22,7 +26,7 @@ export const addComment = (comments) => {
                 comment:comments
             }),
             headers: {
-                'content-type': 'application/json'
+                'Content-type': 'application/json'
             }
         })
         .then(res => res.json())
@@ -30,7 +34,9 @@ export const addComment = (comments) => {
             console.log(7)
             dispatch({ 
             type: "ADD_COMMENT", 
-            payload: comment})})
-        // create route
+            payload: comment
+        })
+        })
+        //create route
     }
 };

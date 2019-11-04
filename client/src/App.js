@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import CommentForm from './components/comments/commentForm';
 import CommentsContainer from './containers/commentContainer';
-import CommentList from './containers/commentContainer';
+import Comments from './components/comments/Comments'
+
 
 import DreamForm from './components/dreams/dreamForm';
 import DreamContainer from './containers/dreamContainer';
@@ -28,17 +29,15 @@ class App extends Component {
 
 
   render() {
-    console.log(1)
     return (
       <div className="app">
         <h1>Dreamy Time</h1>
         <div className="AppPage">
           <div className="navbar"><Nav /></div>
           <div className="dream_form"><DreamForm /></div>
-          
           <div className="comment_form"><CommentForm /></div>
           <div className="dream_container"><DreamList /></div>
-          <div className="comment_container"><CommentList /></div>
+          <div className="comment_container"><Comments /></div>
         </div>
       </div>
     )
@@ -63,14 +62,11 @@ const Nav = () => {
 
 
 const mapStateToProps = (state) => {
-  console.log("I have a dream, they have a sly comment.", state)
+  //console.log(state)
   return {
     dreams: state.dreams,
-    comments: state.comments
-
-  }
+    comments: state.comments}
 }
-
 
 // map the global state of the props to this specific component
 export default connect(mapStateToProps)(App);

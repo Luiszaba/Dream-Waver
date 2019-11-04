@@ -1,5 +1,5 @@
 export const getDreams = () => {
-    console.log("loading")
+    console.log("fetching dreams")
     return(dispatch) => {
         //must be done in two steps because these are async actions - thunk
         dispatch({type: 'LOADING_DREAMS'})
@@ -21,13 +21,13 @@ export const addDreams = (dreams) => {
                 dream:dreams
             }),
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json'
             }
         })
         .then(res => res.json())
         .then(dream => dispatch({ 
             type: "ADD_DREAM", 
-            payload: dream}))
+            payload: dream
+        }))}};
         // create route
-    }
-};
+    

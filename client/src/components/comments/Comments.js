@@ -6,7 +6,7 @@ class Comments extends Component {
         const { comments } = this.props;
         const listComments = comments.comments.map((comment) => 
             <ul key={comment.id}>
-            <Comment 
+            <Comment
             comment={comment}
             />
             </ul>

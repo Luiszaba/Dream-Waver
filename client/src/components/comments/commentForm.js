@@ -25,7 +25,7 @@ class CommentForm extends Component {
         this.setState({
             comment: "",
             loading: false
-            // available in the store because I connected dispatch to props
+            //available in the store because I connected dispatch to props
         })
     }
 

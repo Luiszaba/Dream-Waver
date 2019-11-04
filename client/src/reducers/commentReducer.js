@@ -1,15 +1,18 @@
-export default (state = {comments: [], loading: false } , action) => {
-    console.log(9)
+export default (state = {comments: [], loading: false }, action) => {
+    //console.log(9)
     switch(action.type) {
-        case 'LOADING_COMMENT':
+        case 'LOADING_COMMENTS':
+            console.log("Loading comments")
             return {
                 ...state, 
                 loading: true
             };
 
-        case 'FETCH_COMMENT':
+        case 'FETCH_COMMENTS':
+            
+            console.log("complete async -comments")
             return {
-                dreams: action.payload,
+                comments: action.payload,
                 loading: false
             };
             // completes aysnc
@@ -24,7 +27,7 @@ export default (state = {comments: [], loading: false } , action) => {
         case 'COMMENT_ADDED':
             console.log("comment added")
             return {
-                dreams: [...state.comments, action.payload],
+                comments: [...state.comments, action.payload],
                 loading: false
                     // spread the array
             };

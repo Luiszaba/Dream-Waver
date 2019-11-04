@@ -1,15 +1,18 @@
 export default (state = {dreams: [], loading: false } , action) => {
     switch(action.type) {
         case 'LOADING_DREAMS':
+            console.log("loading dreams")
             return {
                 ...state, 
                 loading: true
             };
 
         case 'FETCH_DREAMS':
+            console.log("complete async -dreams")
             return {
-                dreams: action.payload,
-                loading: false
+                loading: false,
+                dreams: [...action.payload]
+                
             };
             // completes aysnc
 
@@ -24,7 +27,7 @@ export default (state = {dreams: [], loading: false } , action) => {
             console.log("Dream added")
             return {
                 dreams: [...state.dreams, action.payload],
-                loading: false
+                loading: true
                     // spread the array
             };
 
